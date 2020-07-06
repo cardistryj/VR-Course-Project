@@ -11,7 +11,7 @@ public class uiManager : MonoBehaviour
 
     public Mode[] modes;
     public Mode currentMode;
-    public ModState startingMode;
+    public ModeState startingMode;
 
     [Header("Animation")]
     public float animationInTime = 0.5f;
@@ -38,20 +38,20 @@ public class uiManager : MonoBehaviour
         SetMode(startingMode);
     }
 
-    public void SetMode(ModState state)
+    public void SetMode(ModeState state)
     {
         if (currentMode != null)
         {
             StartCoroutine(AnimateModeAlpha(currentMode, 0, animationOutTime, 0));
         }
-        if (state == ModState.None)
+        if (state == ModeState.None)
             return;
 
         currentMode = GetMode(state);
         StartCoroutine(AnimateModeAlpha(currentMode, 1, animationInTime, animationOutTime));
     }
 
-    public Mode GetMode(ModState state)
+    public Mode GetMode(ModeState state)
     {
         foreach (Mode mode in modes)
         {

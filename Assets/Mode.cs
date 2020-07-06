@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(CanvasGroup))]
 public class Mode : MonoBehaviour
 {
-    public ModState state;
+    public ModeState state;
 
     [HideInInspector]
     public CanvasGroup canvasGroup;
@@ -32,7 +32,7 @@ public class Mode : MonoBehaviour
     }
 }
 
-public enum ModState
+public enum ModeState
 {
     PlaneMode,
     EditMode,

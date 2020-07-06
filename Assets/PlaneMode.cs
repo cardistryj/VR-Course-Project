@@ -47,7 +47,7 @@ public class PlaneMode : Mode
     public void OnAccept()
     {
         canRaycast = false;
-        uiManager.instance.SetMode(ModState.EditMode);
+        uiManager.instance.SetMode(ModeState.EditMode);
     }
 
     public void UpdatePointOfInterest()

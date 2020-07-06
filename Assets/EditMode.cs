@@ -44,12 +44,12 @@ public class EditMode : Mode
 
     public void OnAccept()
     {
-        uiManager.instance.SetMode(ModState.PlayMode);
+        uiManager.instance.SetMode(ModeState.PlayMode);
     }
 
     public void BackToPlaneMode()
     {
-        uiManager.instance.SetMode(ModState.PlaneMode);
+        uiManager.instance.SetMode(ModeState.PlaneMode);
     }
 
     public void ChangeScale(bool value)
@@ -63,7 +63,7 @@ public class EditMode : Mode
 
     public void CheckScale(float scale)
     {
-        //scaleSlider.interactable = false;
+        scaleSlider.interactable = false;
 
         if (scale != _previousSliderValue)
         {

@@ -5,8 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class CarController : MonoBehaviour
 {
-
-
     [Header("Input")]
     public float motorInput;
     public float steerInput;
@@ -26,7 +24,7 @@ public class CarController : MonoBehaviour
     private Rigidbody _rigidbody;
     public Transform centreOfMass;
 
-    //    // Start is called before the first frame update
+    // Start is called before the first frame update
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -45,14 +43,14 @@ public class CarController : MonoBehaviour
 
     public void CheckInput()
     {
-//#if UNITY_ANDROID
+#if UNITY_ANDROID
         currentMotorInput = maxMotorTorque * motorInput;
         currentSteeringInput = maxSteeringAngle * steerInput;
-//#endif
-//#if UNITY_EDITOR
-//        currentMotorInput = maxMotorTorque * Input.GetAxis("Vertical");
-//        currentSteeringInput = maxSteeringAngle * Input.GetAxis("Horizontal");
-//#endif
+#endif
+#if UNITY_EDITOR
+        currentMotorInput = maxMotorTorque * Input.GetAxis("Vertical");
+        currentSteeringInput = maxSteeringAngle * Input.GetAxis("Horizontal");
+#endif
     }
 
     //    // Update is called once per frame

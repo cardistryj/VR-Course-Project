@@ -40,7 +40,7 @@ public class PlayMode : Mode
 
     public void BackToEditMode(bool value)
     {
-        uiManager.instance.SetMode(ModState.EditMode);
+        uiManager.instance.SetMode(ModeState.EditMode);
     }
 
     public void Update()
@@ -65,7 +65,7 @@ public class PlayMode : Mode
         }
         if (!isTouchingSlider && steeringSlider.value != 0)
         {
-            if (steeringSlider.value > -0.02f && steeringSlider.value < 0.2f)
+            if (steeringSlider.value > -0.2f && steeringSlider.value < 0.2f)
                 steeringSlider.value = 0;
 
             steeringSlider.value = Mathf.Lerp(steeringSlider.value, 0, 4 * Time.deltaTime);
